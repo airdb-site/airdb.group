@@ -14,5 +14,8 @@ help: ## Show help messages
 run: ## Run locally
 	pnpm dev
 
+install: ## Install dependencies
+	pnpm install --frozen-lockfile
+
 build: ## Build website
 	pnpm build
