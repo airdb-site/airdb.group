@@ -1,0 +1,35 @@
+---
+import { mission, platformLayers, sectors, trustReasons } from "../config/site";
+---
+
+<section class="shell section-gap">
+  <div class="section-heading">
+    <p class="eyebrow">{mission.eyebrow}</p>
+    <h2>{mission.title}</h2>
+    <p>{mission.body}</p>
+  </div>
+  <div class="matrix-grid">
+    <div class="pillar-grid">
+      {
+        sectors.map((pillar) => (
+          <article class="pillar">
+            <h3>{pillar.title}</h3>
+            <p>{pillar.summary}</p>
+          </article>
+        ))
+      }
+    </div>
+    <aside class="trust-panel">
+      <p class="eyebrow">AI+ Platform</p>
+      <h3>Shared infrastructure keeps the group coherent across sectors.</h3>
+      <ul>
+        {platformLayers.map((item) => <li><strong>{item.title}</strong> {item.body}</li>)}
+      </ul>
+      <div class="trust-divider" />
+      <p class="eyebrow">Why It Holds Together</p>
+      <ul>
+        {trustReasons.map((item) => <li>{item}</li>)}
+      </ul>
+    </aside>
+  </div>
+</section>

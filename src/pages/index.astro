@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ComplianceBand from "../components/ComplianceBand.astro";
+import Hero from "../components/Hero.astro";
+import InfoBlocks from "../components/InfoBlocks.astro";
+import ServiceMatrix from "../components/ServiceMatrix.astro";
+import { company, corporateNarrative } from "../config/site";
+---
+
+<BaseLayout
+  title="AIRDB Group | AI+ For Industry, Infrastructure, and the Physical World"
+  description="AIRDB Group corporate website for customers, partners, institutions, and technical candidates."
+  activePath="/"
+>
+  <Hero />
+  <ComplianceBand />
+  <ServiceMatrix />
+  <section class="shell section-gap narrative-grid">
+    <div class="section-heading">
+      <p class="eyebrow">Group Narrative</p>
+      <h2>One group identity, multiple sectors, one AI+ foundation.</h2>
+    </div>
+    <div class="narrative-cards">
+      {
+        corporateNarrative.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <InfoBlocks />
+  <section class="shell legal-note">
+    <p>{company.legalNotice}</p>
+  </section>
+</BaseLayout>

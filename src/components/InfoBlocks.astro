@@ -1,0 +1,83 @@
+---
+import {
+  company,
+  dueDiligenceItems,
+  engineeringLinks,
+  groupBlocks,
+  operatingRegions,
+  platformLayers
+} from "../config/site";
+---
+
+<section class="shell section-gap info-grid">
+  <article class="info-block">
+    <p class="eyebrow">{groupBlocks[0].eyebrow}</p>
+    <h3>{groupBlocks[0].title}</h3>
+    <p class="block-copy">{groupBlocks[0].body}</p>
+    <div class="region-stack">
+      {
+        platformLayers.map((item) => (
+          <section>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </section>
+        ))
+      }
+    </div>
+  </article>
+  <article class="info-block">
+    <p class="eyebrow">{groupBlocks[1].eyebrow}</p>
+    <h3>{groupBlocks[1].title}</h3>
+    <p class="block-copy">{groupBlocks[1].body}</p>
+    <div class="region-stack">
+      {
+        operatingRegions.map((item) => (
+          <section>
+            <h3>{item.region}</h3>
+            <p>{item.locations}</p>
+          </section>
+        ))
+      }
+    </div>
+  </article>
+  <article class="info-block">
+    <p class="eyebrow">{groupBlocks[2].eyebrow}</p>
+    <h3>{groupBlocks[2].title}</h3>
+    <p class="block-copy">{groupBlocks[2].body}</p>
+    <div class="link-stack">
+      {
+        engineeringLinks.map((item) => (
+          <a class="resource-link" href={item.href} target="_blank" rel="noreferrer">
+            <strong>{item.title}</strong>
+            <span>{item.body}</span>
+            <em>{item.label}</em>
+          </a>
+        ))
+      }
+    </div>
+  </article>
+  <article class="contact-block">
+    <p class="eyebrow">Corporate entity</p>
+    <h3>Keep legal, contact, and operating details easy to review.</h3>
+    <a href={`mailto:${company.email}`}>{company.email}</a>
+    <p>{company.address}</p>
+    <dl class="details-list">
+      <div>
+        <dt>Legal entity</dt>
+        <dd>{company.legalEntity}</dd>
+      </div>
+      <div>
+        <dt>Registration number</dt>
+        <dd>{company.registrationNumber}</dd>
+      </div>
+      <div>
+        <dt>Incorporation date</dt>
+        <dd>{company.incorporationDate}</dd>
+      </div>
+    </dl>
+    <ul class="contact-list">
+      {dueDiligenceItems.map((item) => <li>{item}</li>)}
+    </ul>
+    <p class="small-note">{company.contactNote}</p>
+  </article>
+</section>

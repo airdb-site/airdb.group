@@ -1,0 +1,15 @@
+---
+import { dueDiligenceItems } from "../config/site";
+---
+
+<section class="compliance-band">
+  <div class="shell compliance-grid">
+    <div>
+      <p class="eyebrow">For Diligence And Review</p>
+      <h2>A group website should support trust before it tries to impress.</h2>
+    </div>
+    <ul>
+      {dueDiligenceItems.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+</section>

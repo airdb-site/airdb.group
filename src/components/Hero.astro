@@ -1,0 +1,52 @@
+---
+import { company, sectorSignals } from "../config/site";
+---
+
+<section class="hero shell section-gap">
+  <div class="hero-copy">
+    <p class="kicker-cn">Global AI+ Technology Group</p>
+    <h1>{company.tagline}</h1>
+    <p class="lead">{company.intro}</p>
+    <p class="lead lead-cn">{company.subtitle}</p>
+    <p class="lead lead-minor">{company.subtitleZh}</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="/contact">Contact Us</a>
+      <a class="button button-secondary" href="/about">Explore the Group</a>
+    </div>
+    <div class="proof-strip">
+      {sectorSignals.map((item) => <span class="signal-tag">{item}</span>)}
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="signal-card signal-card-top">
+      <span>AI+ mother platform</span>
+      <strong>Infrastructure, intelligence, and sector execution woven into one multinational group</strong>
+    </div>
+    <div class="signal-card signal-card-bottom">
+      <span>Sector network</span>
+      <strong>Agriculture, deep-sea, biomedicine, payments, and public-good technology linked through shared systems</strong>
+    </div>
+    <div class="infra-stage">
+      <div class="infra-line" />
+      <div class="infra-core">
+        <span>AI+ platform</span>
+        <strong>Compute, data, reliability, and operating intelligence</strong>
+      </div>
+      <div class="infra-node node-left">
+        <span>Ocean & agri</span>
+      </div>
+      <div class="infra-node node-right">
+        <span>Bio & payments</span>
+      </div>
+      <div class="infra-node node-bottom">
+        <span>Public good</span>
+      </div>
+    </div>
+    <div class="server-wall">
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+</section>

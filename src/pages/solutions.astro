@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { sectors } from "../config/site";
+---
+
+<BaseLayout
+  title="Sectors | AIRDB Group"
+  description="AI+ sector portfolio across agriculture, deep-sea, intelligence, biomedicine, payments, and public good."
+  activePath="/solutions"
+>
+  <section class="shell page-hero">
+    <p class="eyebrow">Sectors</p>
+    <h1>An AI+ group across strategic sectors.</h1>
+    <p class="lead">
+      The sector story should feel connected. Each business direction draws on
+      shared intelligence, infrastructure, engineering discipline, and regional execution.
+    </p>
+  </section>
+  <section class="shell solution-grid">
+    {
+      sectors.map((sector) => (
+        <article class="solution-card">
+          <p class="eyebrow">AI+ Sector</p>
+          <h2>{sector.title}</h2>
+          <p>{sector.summary}</p>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>

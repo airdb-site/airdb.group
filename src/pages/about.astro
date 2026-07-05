@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company } from "../config/site";
+---
+
+<BaseLayout
+  title="Group | AIRDB Group"
+  description="Corporate profile and multinational group positioning for AIRDB Group."
+  activePath="/about"
+>
+  <section class="shell page-hero">
+    <p class="eyebrow">Group</p>
+    <h1>A multinational AI+ group with one technical mother platform.</h1>
+    <p class="lead">
+      The group profile should help customers, partners, investors, regulators,
+      and candidates understand what AIRDB is, how it is organized, and why its
+      sectors fit together.
+    </p>
+  </section>
+  <section class="shell about-grid">
+    <article class="about-panel">
+      <p class="eyebrow">Positioning</p>
+      <h2>AI+, industry, and infrastructure as one narrative.</h2>
+      <p>
+        AIRDB Group should read as a technology-led multinational group that
+        builds shared intelligence and applies it across strategic sectors.
+      </p>
+    </article>
+    <article class="about-panel">
+      <p class="eyebrow">Leadership</p>
+      <h2>Use real operator history as a strategic trust asset.</h2>
+      <p>{company.founderSummary}</p>
+    </article>
+    <article class="about-panel">
+      <p class="eyebrow">Entity readiness</p>
+      <h2>Keep legal and operating facts easy to verify.</h2>
+      <p>{company.legalNotice}</p>
+    </article>
+  </section>
+</BaseLayout>

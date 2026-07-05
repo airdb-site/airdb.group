@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { company } from "../config/site";
+---
+
+<BaseLayout
+  title="Contact | airdb Group"
+  description="Contact airdb Group for partnerships, services, and diligence inquiries."
+  activePath="/contact"
+>
+  <section class="shell page-hero">
+    <p class="eyebrow">Contact</p>
+    <h1>One clear contact path for customers, partners, and diligence teams.</h1>
+    <p class="lead">
+      Replace the placeholders here with verified corporate details before using
+      the site in banking, licensing, fundraising, or public-sector workflows.
+    </p>
+  </section>
+  <section class="shell contact-layout">
+    <article class="contact-card">
+      <h2>Primary mailbox</h2>
+      <a href={`mailto:${company.email}`}>{company.email}</a>
+    </article>
+    <article class="contact-card">
+      <h2>Registered address</h2>
+      <p>{company.address}</p>
+    </article>
+    <article class="contact-card">
+      <h2>Compliance note</h2>
+      <p>{company.contactNote}</p>
+    </article>
+  </section>
+</BaseLayout>

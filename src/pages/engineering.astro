@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { engineeringLinks } from "../config/site";
+---
+
+<BaseLayout
+  title="Engineering | airdb Group"
+  description="Engineering, open source, and technical writing by airdb Group."
+  activePath="/engineering"
+>
+  <section class="shell page-hero">
+    <p class="eyebrow">Engineering</p>
+    <h1>Technical credibility should be visible, linked, and reviewable.</h1>
+    <p class="lead">
+      A strong group site does not try to hold every technical detail. It points
+      clearly to source code, writing, and operating practice that outside
+      reviewers can inspect.
+    </p>
+  </section>
+  <section class="shell engineering-layout">
+    {
+      engineeringLinks.map((item) => (
+        <article class="resource-panel">
+          <h2>{item.title}</h2>
+          <p>{item.body}</p>
+          <a href={item.href} target="_blank" rel="noreferrer">
+            {item.label}
+          </a>
+        </article>
+      ))
+    }
+    <article class="resource-panel emphasis-panel">
+      <p class="eyebrow">What To Publish</p>
+      <ul>
+        <li>Architecture notes that explain platform choices and reliability tradeoffs</li>
+        <li>Public repositories or samples that show ongoing engineering discipline</li>
+        <li>Operational writing that helps customers and candidates understand execution quality</li>
+        <li>Linkable materials that support diligence without overstating product claims</li>
+      </ul>
+    </article>
+  </section>
+</BaseLayout>

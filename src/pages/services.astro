@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { platformLayers, trustReasons } from "../config/site";
+---
+
+<BaseLayout
+  title="AI+ Platform | AIRDB Group"
+  description="Shared AI infrastructure, data systems, and operating foundations across AIRDB Group sectors."
+  activePath="/services"
+>
+  <section class="shell page-hero">
+    <p class="eyebrow">AI+ Platform</p>
+    <h1>Shared infrastructure, sector-specific execution.</h1>
+    <p class="lead">
+      AIRDB Group is held together by a common platform layer: AI
+      infrastructure, data systems, reliability, and cross-border operating
+      capability that can be reused across very different sectors.
+    </p>
+  </section>
+  <section class="shell stacked-pillar-list">
+    {
+      platformLayers.map((pillar) => (
+        <article class="service-row">
+      <div>
+        <p class="eyebrow">Shared Layer</p>
+        <h2>{pillar.title}</h2>
+      </div>
+          <div>
+            <p>{pillar.body}</p>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+  <section class="shell section-gap split-panel">
+    <article>
+      <p class="eyebrow">Operating Logic</p>
+      <h2>The platform exists to support multiple real sectors, not abstract demos.</h2>
+      <p>
+        The AI+ platform should explain why the group can move across agriculture,
+        deep-sea, biomedicine, payments, and public-good work without sounding fragmented.
+      </p>
+    </article>
+    <aside>
+      <p class="eyebrow">Working Principles</p>
+      <ul>
+        {trustReasons.map((item) => <li>{item}</li>)}
+      </ul>
+    </aside>
+  </section>
+</BaseLayout>
