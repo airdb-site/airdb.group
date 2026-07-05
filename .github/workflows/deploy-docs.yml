@@ -33,7 +33,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.AIRDB_GITHUB_WORKFLOW_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           cname: airdb.group
           #enable_jekyll: true
