@@ -11,16 +11,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          version: 11.9.0
-
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version: 26
-          cache: pnpm
+
+      - name: Install PNPM
+        run: npm i -g pnpm
 
       - name: Build Docs
         env:
@@ -32,9 +29,9 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUBBOTTOKEN }}
+          github_token: ${{ secrets.AIRDB_GITHUB_WORKFLOW_TOKEN }}
           force_orphan: true
-          cname: airdb.com
+          cname: airdb.group
           #enable_jekyll: true
           publish_branch: gh-pages
           publish_dir: dist
