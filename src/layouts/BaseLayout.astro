@@ -32,12 +32,25 @@ const {
   </head>
   <body>
     <header class="site-header">
-      <div class="shell nav-shell">
-        <a class="brand" href="/">
-          <span class="brand-mark">{company.shortName}</span>
-          <span class="brand-group">Group</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary">
+      <div class="shell nav-shell" data-mobile-nav-root>
+        <div class="nav-topline">
+          <a class="brand" href="/">
+            <span class="brand-mark">{company.shortName}</span>
+            <span class="brand-group">Group</span>
+          </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Toggle navigation"
+            data-mobile-nav-toggle
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
           {
             navigation.map((item) => (
               <a
@@ -82,5 +95,33 @@ const {
         </div>
       </div>
     </footer>
+    <script is:inline>
+      const navRoot = document.querySelector("[data-mobile-nav-root]");
+      const navToggle = document.querySelector("[data-mobile-nav-toggle]");
+
+      if (navRoot instanceof HTMLElement && navToggle instanceof HTMLButtonElement) {
+        const syncNav = () => {
+          if (window.innerWidth > 760) {
+            navRoot.dataset.mobileNavOpen = "true";
+            navToggle.setAttribute("aria-expanded", "false");
+            return;
+          }
+
+          if (!navRoot.dataset.mobileNavOpen) {
+            navRoot.dataset.mobileNavOpen = "false";
+          }
+        };
+
+        syncNav();
+
+        navToggle.addEventListener("click", () => {
+          const isOpen = navRoot.dataset.mobileNavOpen === "true";
+          navRoot.dataset.mobileNavOpen = isOpen ? "false" : "true";
+          navToggle.setAttribute("aria-expanded", String(!isOpen));
+        });
+
+        window.addEventListener("resize", syncNav);
+      }
+    </script>
   </body>
 </html>
