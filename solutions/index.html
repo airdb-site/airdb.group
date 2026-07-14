@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI+ sector portfolio across agriculture, deep-sea, intelligence, biomedicine, payments, and public good."><meta name="generator" content="Astro v7.0.0"><title>Sectors | AIRDB Group</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/BaseLayout.tEGGlrqq.css"></head><body><header class="site-header"><div class="shell nav-shell" data-mobile-nav-root><div class="nav-topline"><a class="brand" href="/"><span class="brand-mark">AIRDB</span><span class="brand-group">Group</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation" data-mobile-nav-toggle><span></span><span></span></button></div><nav class="site-nav" id="primary-nav" aria-label="Primary"><a href="/" class="nav-link">Home</a><a href="/about" class="nav-link">Group</a><a href="/solutions" class="nav-link is-active">Sectors</a><a href="/services" class="nav-link">AI+ Platform</a><a href="/engineering" class="nav-link">Engineering</a><a href="/contact" class="nav-link">Contact</a></nav></div></header><main><section class="shell page-hero"><p class="eyebrow">Sectors</p><h1>An AI+ group across strategic sectors.</h1><p class="lead">The sector story should feel connected. Each business direction draws on shared intelligence, infrastructure, engineering discipline, and regional execution.</p></section><section class="shell solution-grid"><article class="solution-card"><p class="eyebrow">AI+ Sector</p><h2>AI+ Agriculture</h2><p>Precision sensing, crop intelligence, optimization, automation, and decision support for modern agricultural systems.</p></article><article class="solution-card"><p class="eyebrow">AI+ Sector</p><h2>AI+ Deep-Sea</h2><p>Ocean sensing, subsea systems, environmental modeling, autonomous operations, and intelligent infrastructure for marine environments.</p></article><article class="solution-card"><p class="eyebrow">AI+ Sector</p><h2>AI+ Intelligence</h2><p>AI infrastructure, compute platforms, data systems, modeling, analytics, and enterprise-grade intelligent operations.</p></article><article class="solution-card"><p class="eyebrow">AI+ Sector</p><h2>AI+ Biomedicine</h2><p>Biomedical data systems, analysis, diagnostics support, research enablement, and computational life science tooling.</p></article><article class="solution-card"><p class="eyebrow">AI+ Sector</p><h2>AI+ Cross-Border Payments</h2><p>Payment infrastructure, risk systems, transaction intelligence, compliance-aware operations, and cross-border financial workflows.</p></article><article class="solution-card"><p class="eyebrow">AI+ Sector</p><h2>AI+ Technology for Public Good</h2><p>Digital public-interest systems, social-impact technology, open technical initiatives, and scalable tools for broad societal value.</p></article></section></main><footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><p class="eyebrow">AIRDB Group</p><h2>Corporate presence with technical depth.</h2><p class="footer-copy">Designed for enterprise customers, partners, technical candidates, and diligence reviewers.</p><a class="footer-mail" href="mailto:info@airdb.com">info@airdb.com</a></div><div class="footer-columns"><section><h3>Group</h3><div class="footer-links"><a href="/about">About AIRDB</a><a href="/about">Leadership</a><a href="/contact">Governance &amp; contact</a></div></section><section><h3>Sectors</h3><div class="footer-links"><a href="/solutions">AI+ Agriculture</a><a href="/solutions">AI+ Deep-Sea</a><a href="/solutions">AI+ Payments</a></div></section><section><h3>AI+ Platform</h3><div class="footer-links"><a href="/services">Infrastructure</a><a href="/services">Data systems</a><a href="/services">Reliability &amp; security</a></div></section><section><h3>Resources</h3><div class="footer-links"><a href="/engineering">Engineering</a><a href="https://airdb.wiki">airdb.wiki</a><a href="https://github.com/">GitHub</a></div></section></div></div></footer><script>
+      const navRoot = document.querySelector("[data-mobile-nav-root]");
+      const navToggle = document.querySelector("[data-mobile-nav-toggle]");
+
+      if (navRoot instanceof HTMLElement && navToggle instanceof HTMLButtonElement) {
+        const syncNav = () => {
+          if (window.innerWidth > 760) {
+            navRoot.dataset.mobileNavOpen = "true";
+            navToggle.setAttribute("aria-expanded", "false");
+            return;
+          }
+
+          if (!navRoot.dataset.mobileNavOpen) {
+            navRoot.dataset.mobileNavOpen = "false";
+          }
+        };
+
+        syncNav();
+
+        navToggle.addEventListener("click", () => {
+          const isOpen = navRoot.dataset.mobileNavOpen === "true";
+          navRoot.dataset.mobileNavOpen = isOpen ? "false" : "true";
+          navToggle.setAttribute("aria-expanded", String(!isOpen));
+        });
+
+        window.addEventListener("resize", syncNav);
+      }
+    </script></body></html>

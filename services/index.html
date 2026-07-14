@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Shared AI infrastructure, data systems, and operating foundations across AIRDB Group sectors."><meta name="generator" content="Astro v7.0.0"><title>AI+ Platform | AIRDB Group</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/BaseLayout.tEGGlrqq.css"></head><body><header class="site-header"><div class="shell nav-shell" data-mobile-nav-root><div class="nav-topline"><a class="brand" href="/"><span class="brand-mark">AIRDB</span><span class="brand-group">Group</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation" data-mobile-nav-toggle><span></span><span></span></button></div><nav class="site-nav" id="primary-nav" aria-label="Primary"><a href="/" class="nav-link">Home</a><a href="/about" class="nav-link">Group</a><a href="/solutions" class="nav-link">Sectors</a><a href="/services" class="nav-link is-active">AI+ Platform</a><a href="/engineering" class="nav-link">Engineering</a><a href="/contact" class="nav-link">Contact</a></nav></div></header><main><section class="shell page-hero"><p class="eyebrow">AI+ Platform</p><h1>Shared infrastructure, sector-specific execution.</h1><p class="lead">AIRDB Group is held together by a common platform layer: AI infrastructure, data systems, reliability, and cross-border operating capability that can be reused across very different sectors.</p></section><section class="shell stacked-pillar-list"><article class="service-row"><div><p class="eyebrow">Shared Layer</p><h2>AI Infrastructure</h2></div><div><p>Compute, storage, networks, model serving, and platform orchestration.</p></div></article><article class="service-row"><div><p class="eyebrow">Shared Layer</p><h2>Data Systems</h2></div><div><p>Acquisition, pipelines, governance, and operational data foundations.</p></div></article><article class="service-row"><div><p class="eyebrow">Shared Layer</p><h2>Reliability &amp; Security</h2></div><div><p>SRE, observability, safety controls, compliance, and auditability.</p></div></article><article class="service-row"><div><p class="eyebrow">Shared Layer</p><h2>Cross-border Delivery</h2></div><div><p>Regional operations, partner coordination, and deployable execution frameworks.</p></div></article></section><section class="shell section-gap split-panel"><article><p class="eyebrow">Operating Logic</p><h2>The platform exists to support multiple real sectors, not abstract demos.</h2><p>The AI+ platform should explain why the group can move across agriculture, deep-sea, biomedicine, payments, and public-good work without sounding fragmented.</p></article><aside><p class="eyebrow">Working Principles</p><ul><li>A coherent AI+ mother-platform narrative</li><li>Multi-sector ambition grounded in shared infrastructure</li><li>Cross-border operations and partner readiness</li><li>Engineering artifacts that support diligence and recruiting</li></ul></aside></section></main><footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><p class="eyebrow">AIRDB Group</p><h2>Corporate presence with technical depth.</h2><p class="footer-copy">Designed for enterprise customers, partners, technical candidates, and diligence reviewers.</p><a class="footer-mail" href="mailto:info@airdb.com">info@airdb.com</a></div><div class="footer-columns"><section><h3>Group</h3><div class="footer-links"><a href="/about">About AIRDB</a><a href="/about">Leadership</a><a href="/contact">Governance &amp; contact</a></div></section><section><h3>Sectors</h3><div class="footer-links"><a href="/solutions">AI+ Agriculture</a><a href="/solutions">AI+ Deep-Sea</a><a href="/solutions">AI+ Payments</a></div></section><section><h3>AI+ Platform</h3><div class="footer-links"><a href="/services">Infrastructure</a><a href="/services">Data systems</a><a href="/services">Reliability &amp; security</a></div></section><section><h3>Resources</h3><div class="footer-links"><a href="/engineering">Engineering</a><a href="https://airdb.wiki">airdb.wiki</a><a href="https://github.com/">GitHub</a></div></section></div></div></footer><script>
+      const navRoot = document.querySelector("[data-mobile-nav-root]");
+      const navToggle = document.querySelector("[data-mobile-nav-toggle]");
+
+      if (navRoot instanceof HTMLElement && navToggle instanceof HTMLButtonElement) {
+        const syncNav = () => {
+          if (window.innerWidth > 760) {
+            navRoot.dataset.mobileNavOpen = "true";
+            navToggle.setAttribute("aria-expanded", "false");
+            return;
+          }
+
+          if (!navRoot.dataset.mobileNavOpen) {
+            navRoot.dataset.mobileNavOpen = "false";
+          }
+        };
+
+        syncNav();
+
+        navToggle.addEventListener("click", () => {
+          const isOpen = navRoot.dataset.mobileNavOpen === "true";
+          navRoot.dataset.mobileNavOpen = isOpen ? "false" : "true";
+          navToggle.setAttribute("aria-expanded", String(!isOpen));
+        });
+
+        window.addEventListener("resize", syncNav);
+      }
+    </script></body></html>
