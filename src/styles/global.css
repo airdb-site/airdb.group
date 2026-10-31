@@ -858,3 +858,7 @@ ul {
     width: 100%;
   }
 }
+
+.skip-link { position: fixed; top: -5rem; left: 1rem; z-index: 100; background: white; padding: 1rem; color: #123b28; }
+.skip-link:focus { top: .5rem; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }

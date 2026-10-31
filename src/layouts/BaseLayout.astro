@@ -6,9 +6,11 @@ interface Props {
   title: string;
   description?: string;
   activePath?: string;
+  noindex?: boolean;
 }
 
 const {
+  noindex = false,
   title,
   description = "airdb Group builds AI infrastructure and enterprise delivery systems.",
   activePath = "/"
@@ -23,6 +25,7 @@ const {
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,6 +34,7 @@ const {
     />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="shell nav-shell" data-mobile-nav-root>
         <div class="nav-topline">
@@ -55,6 +59,7 @@ const {
             navigation.map((item) => (
               <a
                 href={item.href}
+                aria-current={activePath === item.href ? "page" : undefined}
                 class:list={[
                   "nav-link",
                   activePath === item.href && "is-active"
@@ -67,7 +72,7 @@ const {
         </nav>
       </div>
     </header>
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <footer class="site-footer">
@@ -100,17 +105,12 @@ const {
       const navToggle = document.querySelector("[data-mobile-nav-toggle]");
 
       if (navRoot instanceof HTMLElement && navToggle instanceof HTMLButtonElement) {
-        const syncNav = () => {
-          if (window.innerWidth > 760) {
-            navRoot.dataset.mobileNavOpen = "true";
-            navToggle.setAttribute("aria-expanded", "false");
-            return;
-          }
-
-          if (!navRoot.dataset.mobileNavOpen) {
-            navRoot.dataset.mobileNavOpen = "false";
-          }
+        const narrow = window.matchMedia('(max-width: 760px)');
+        const closeNav = () => {
+          navRoot.dataset.mobileNavOpen = 'false';
+          navToggle.setAttribute('aria-expanded', 'false');
         };
+        const syncNav = () => closeNav();
 
         syncNav();
 
@@ -120,7 +120,12 @@ const {
           navToggle.setAttribute("aria-expanded", String(!isOpen));
         });
 
-        window.addEventListener("resize", syncNav);
+        narrow.addEventListener('change', syncNav);
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && navRoot.dataset.mobileNavOpen === 'true') {
+            closeNav(); navToggle.focus();
+          }
+        });
       }
     </script>
   </body>

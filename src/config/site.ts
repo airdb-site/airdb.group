@@ -146,7 +146,7 @@ export const engineeringLinks = [
   {
     title: "Open engineering",
     body: "Use a public GitHub organization to show code history, technical direction, and engineering continuity.",
-    href: "https://github.com/",
+    href: "https://github.com/airdb",
     label: "GitHub organization"
   },
   {
@@ -209,7 +209,7 @@ export const footerGroups = [
     links: [
       { href: "/engineering", label: "Engineering" },
       { href: "https://airdb.wiki", label: "airdb.wiki" },
-      { href: "https://github.com/", label: "GitHub" }
+      { href: "https://github.com/airdb", label: "GitHub" }
     ]
   }
 ];
