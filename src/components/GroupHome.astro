@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {homeCopy, type HomeLocale} from "../config/home";
+import "../styles/home.css";
+interface Props {locale: HomeLocale}
+const {locale}=Astro.props;
+const c=homeCopy[locale];
+---
+<BaseLayout title={c.title} description={c.description} homeLocale={locale}>
+  <section class="home-hero home-shell" aria-labelledby="home-title">
+    <div class="home-hero-copy">
+      <p class="home-eyebrow">{c.heroEyebrow}</p>
+      <h1 id="home-title">{c.headline.map(line=><span>{line}</span>)}</h1>
+      <p class="home-intro">{c.intro}</p>
+      <div class="home-actions"><a class="home-button" href="#business">{c.explore}<span aria-hidden="true">→</span></a><a class="home-text-link" href="/contact">{c.discuss} <span aria-hidden="true">↗</span></a></div>
+      <p class="home-warmth">{c.warmth}</p>
+    </div>
+    <figure class="home-landscape"><img src="/images/group-home/hero.webp" width="1536" height="1024" alt={c.alt} fetchpriority="high"/><div class="home-contours" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><figcaption>{c.vision}</figcaption></figure>
+  </section>
+  <section id="business" class="home-business home-shell" aria-labelledby="focus-title">
+    <p class="home-eyebrow">{c.focusEyebrow}</p><div class="home-section-head"><h2 id="focus-title">{c.focus}</h2><p>{c.boundary}</p></div>
+    <div class="home-business-grid">{c.business.map((b,i)=><article class="home-business-card"><div><span class="home-number">0{i+1}</span><h3>{b.title}</h3><p>{b.body}</p><div class="home-domains">{b.links.map(l=><a href={`https://${l.domain}/`} aria-label={`${l.domain} — ${l.label}`} title={l.label}>{l.domain}<span aria-hidden="true">↗</span></a>)}</div></div><img src={`/images/group-home/${b.image}.webp`} width="1254" height="1254" alt="" loading="lazy"/></article>)}</div>
+    <p class="home-status">{c.status}</p><p class="home-status">{c.cnStatus}</p>
+  </section>
+  <section id="method" class="home-method" aria-labelledby="method-title"><div class="home-shell"><p class="home-eyebrow">{c.methodEyebrow}</p><h2 id="method-title">{c.method}</h2><div class="home-method-grid">{c.methods.map((m,i)=><article><span class="home-number">0{i+1}</span><div><h3>{m.title}</h3><p>{m.body}</p></div></article>)}</div></div></section>
+  <section id="cooperation" class="home-cooperation home-shell" aria-labelledby="cooperation-title"><h2 id="cooperation-title">{c.together}</h2><p>{c.invitation}</p><div class="home-cooperation-row"><div class="home-cooperation-links">{c.cooperation.map(t=><a class="home-text-link" href="/contact">{t} <span aria-hidden="true">↗</span></a>)}</div><a class="home-button" href="/contact">{c.contact}<span aria-hidden="true">→</span></a></div><p class="home-culture">{c.culture}</p></section>
+</BaseLayout>
