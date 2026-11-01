@@ -11,15 +11,9 @@ export const company = {
   subtitleZh:
     "以 AI+ 为统一能力底座，连接农业科技、深海科技、人工智能、生物医疗、跨境支付与技术公益等多元板块。",
   legalNotice:
-    "The legal entity, registration number, operating address, founder profile, and regional operating details below are placeholders. Replace them with verified records before public release, KYC review, banking, licensing, or fundraising use.",
-  legalEntity: "AIRDB Group holding entity (replace with verified filing name)",
-  registrationNumber: "2024-XXXXXX-X (replace before launch)",
-  incorporationDate: "To be confirmed",
-  address: "Verified registered address pending confirmation",
-  founderSummary:
-    "Add verified founder and leadership biographies here. For a multinational technology group, public operator history, sector track record, and engineering credibility are strategic trust assets.",
+    "For company information or questions about a proposed engagement, contact info@airdb.com.",
   contactNote:
-    "Use a verified corporate mailbox, registered address, and named contact owner before publishing to banks, regulators, investors, media, or government partners."
+    "Please include the project or topic you would like to discuss in your email."
 };
 
 export const navigation = [
@@ -126,17 +120,17 @@ export const groupBlocks = [
     eyebrow: "Group platform",
     title: "One shared infrastructure base across sectors.",
     body:
-      "The platform layer should explain how AIRDB connects AI infrastructure, data systems, reliability, and operations across all business directions."
+      "AI infrastructure, data systems, reliability, and operations are shared themes across AIRDB’s business directions."
   },
   {
     eyebrow: "Regional operations",
     title: "A multinational structure with local execution paths.",
     body:
-      "Use the group site to show where AIRDB operates, how partners fit, and what deployment readiness means across markets."
+      "Contact us to discuss regional collaboration and the requirements of a specific project."
   },
   {
     eyebrow: "Engineering and research",
-    title: "Technical depth should be visible and current.",
+    title: "Engineering and research resources.",
     body:
       "Engineering writing, open-source work, and sector-focused technical materials help outsiders understand the group's real operating depth."
   }
@@ -145,37 +139,37 @@ export const groupBlocks = [
 export const engineeringLinks = [
   {
     title: "Open engineering",
-    body: "Use a public GitHub organization to show code history, technical direction, and engineering continuity.",
+    body: "Explore public repositories, code history, and technical work on GitHub.",
     href: "https://github.com/airdb",
     label: "GitHub organization"
   },
   {
     title: "Technical knowledge layer",
-    body: "Keep airdb.wiki as the technical publication and engineering community layer linked from the group site.",
+    body: "Explore technical publications and engineering community knowledge on airdb.wiki.",
     href: "https://airdb.wiki",
     label: "Visit airdb.wiki"
   }
 ];
 
 export const dueDiligenceItems = [
-  "Verified legal entity and beneficial ownership details",
-  "Registered address, incorporation date, and registration identifiers",
-  "Named operating scope across sectors, platform, and delivery activities",
-  "Corporate email, documented contact path, and public engineering references"
+  "Legal entity and ownership inquiries",
+  "Registration and address inquiries",
+  "Project scope and delivery inquiries",
+  "Contact and engineering-resource inquiries"
 ];
 
 export const corporateNarrative = [
   {
     title: "Group identity",
-    body: "Present AIRDB Group as the parent technology and industrial platform rather than as a single-product company."
+    body: "AIRDB Group’s focus spans technology, industry, and shared infrastructure."
   },
   {
     title: "AI+ lens",
-    body: "Use AI+ as the unifying idea that connects agriculture, deep-sea, intelligence, biomedicine, payments, and public-good technology."
+    body: "AI+ connects our interests in agriculture, deep-sea, intelligence, biomedicine, payments, and public-good technology."
   },
   {
     title: "Global structure",
-    body: "Keep the language multinational, partner-friendly, and compatible with diligence, institutional, and government review."
+    body: "Contact us to discuss cross-border collaboration and project-specific requirements."
   }
 ];
 
@@ -184,7 +178,7 @@ export const footerGroups = [
     title: "Group",
     links: [
       { href: "/about", label: "About AIRDB" },
-      { href: "/about", label: "Leadership" },
+      { href: "/about", label: "Company information" },
       { href: "/contact", label: "Governance & contact" }
     ]
   },

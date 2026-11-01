@@ -58,23 +58,8 @@ import {
   </article>
   <article class="contact-block">
     <p class="eyebrow">Corporate entity</p>
-    <h3>Keep legal, contact, and operating details easy to review.</h3>
+    <h3>Company information and contact.</h3>
     <a href={`mailto:${company.email}`}>{company.email}</a>
-    <p>{company.address}</p>
-    <dl class="details-list">
-      <div>
-        <dt>Legal entity</dt>
-        <dd>{company.legalEntity}</dd>
-      </div>
-      <div>
-        <dt>Registration number</dt>
-        <dd>{company.registrationNumber}</dd>
-      </div>
-      <div>
-        <dt>Incorporation date</dt>
-        <dd>{company.incorporationDate}</dd>
-      </div>
-    </dl>
     <ul class="contact-list">
       {dueDiligenceItems.map((item) => <li>{item}</li>)}
     </ul>
